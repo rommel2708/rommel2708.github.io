@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Romeo Frisoli — Match &amp; Data Analyst</title>
+<meta name="description" content="Portfolio di Romeo Alessandro Frisoli, Match &amp; Data Analyst: analisi video, report avversari, scouting e strumenti data-driven per lo staff tecnico." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --navy-900:#06122B;
+    --navy-850:#091B3A;
+    --navy-800:#0B1F45;
+    --navy-700:#12326B;
+    --blue:#2F7BEF;
+    --yellow:#FFD21E;
+    --text:#EAF0FB;
+    --muted:#93A4C6;
+    --line:rgba(234,240,251,0.14);
+    --line-strong:rgba(234,240,251,0.30);
+    --maxw:1100px;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--navy-900);
+    color:var(--text);
+    font-family:"Inter",system-ui,sans-serif;
+    font-size:17px;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;text-decoration:none;}
+
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px;}
+
+  .eyebrow{
+    font-family:"Space Mono",monospace;
+    font-size:.78rem;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    color:var(--blue);
+    margin:0 0 18px;
+  }
+  .eyebrow::before{content:"// ";color:var(--muted);}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;
+    overflow:hidden;
+    padding:120px 0 90px;
+    border-bottom:1px solid var(--line);
+  }
+  .hero .pitch{
+    position:absolute;
+    inset:auto -10% -30% auto;
+    right:-8%;
+    bottom:-25%;
+    width:min(720px,80vw);
+    opacity:.16;
+    pointer-events:none;
+    z-index:0;
+  }
+  .hero .wrap{position:relative;z-index:1;}
+  .hero .eyebrow{margin-bottom:14px;}
+  h1.name{
+    font-family:"Anton",sans-serif;
+    font-weight:400;
+    font-size:clamp(3.2rem,13vw,8.5rem);
+    line-height:.9;
+    letter-spacing:.01em;
+    text-transform:uppercase;
+    margin:0;
+  }
+  h1.name span{display:block;}
+  h1.name .last{color:var(--blue);}
+  .tagline{
+    max-width:620px;
+    margin:26px 0 0;
+    font-size:1.18rem;
+    color:var(--text);
+  }
+  .tagline b{color:var(--yellow);font-weight:600;}
+
+  .meta-row{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-top:30px;
+    font-family:"Space Mono",monospace;
+    font-size:.74rem;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+  }
+  .meta-row span{
+    border:1px solid var(--line);
+    border-radius:999px;
+    padding:7px 14px;
+    color:var(--muted);
+  }
+
+  .cta-row{display:flex;flex-wrap:wrap;gap:14px;margin-top:38px;}
+  .btn{
+    display:inline-flex;align-items:center;gap:9px;
+    font-family:"Space Mono",monospace;
+    font-size:.82rem;letter-spacing:.05em;
+    padding:13px 22px;border-radius:8px;
+    border:1px solid var(--line-strong);
+    transition:transform .18s ease,background .18s ease,color .18s ease,border-color .18s ease;
+  }
+  .btn .arw{transition:transform .18s ease;}
+  .btn:hover{transform:translateY(-2px);}
+  .btn:hover .arw{transform:translateX(3px);}
+  .btn-primary{background:var(--yellow);color:var(--navy-900);border-color:var(--yellow);font-weight:700;}
+  .btn-primary:hover{background:#ffdc4d;}
+  .btn-ghost:hover{border-color:var(--blue);color:var(--blue);}
+
+  /* ---------- SECTIONS ---------- */
+  .section{padding:86px 0;border-bottom:1px solid var(--line);}
+  .section h2{
+    font-family:"Anton",sans-serif;font-weight:400;
+    font-size:clamp(2rem,5.5vw,3.4rem);
+    line-height:1;text-transform:uppercase;letter-spacing:.01em;
+    margin:0 0 34px;
+  }
+  .lead{max-width:680px;color:var(--text);font-size:1.12rem;}
+  .lead .hl{color:var(--yellow);font-weight:600;}
+
+  /* ---------- CREDENTIALS ---------- */
+  .creds{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:12px;overflow:hidden;}
+  .cred{background:var(--navy-850);padding:26px 24px;}
+  .cred .k{font-family:"Space Mono",monospace;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);margin:0 0 14px;}
+  .cred ul{margin:0;padding:0;list-style:none;}
+  .cred li{padding:7px 0;border-top:1px solid var(--line);color:var(--text);font-size:.97rem;}
+  .cred li:first-child{border-top:0;padding-top:0;}
+  .cred li b{color:var(--yellow);font-weight:600;}
+
+  /* ---------- PROJECTS ---------- */
+  .projects{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;}
+  .card{
+    background:var(--navy-850);
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:28px 26px 24px;
+    display:flex;flex-direction:column;
+    transition:transform .2s ease,border-color .2s ease,background .2s ease;
+  }
+  .card:hover{transform:translateY(-4px);border-color:var(--blue);background:var(--navy-800);}
+  .card .cat{font-family:"Space Mono",monospace;font-size:.7rem;letter-spacing:.13em;text-transform:uppercase;color:var(--blue);margin:0 0 12px;}
+  .card h3{font-family:"Inter",sans-serif;font-weight:700;font-size:1.32rem;line-height:1.2;margin:0 0 12px;}
+  .card p{margin:0 0 18px;color:var(--muted);font-size:.98rem;}
+  .tags{display:flex;flex-wrap:wrap;gap:7px;margin:0 0 20px;}
+  .tag{font-family:"Space Mono",monospace;font-size:.68rem;letter-spacing:.04em;color:var(--text);border:1px solid var(--line);border-radius:6px;padding:5px 9px;}
+  .card .links{margin-top:auto;display:flex;flex-wrap:wrap;gap:18px;}
+  .card .links a{font-family:"Space Mono",monospace;font-size:.8rem;color:var(--yellow);border-bottom:1px solid transparent;padding-bottom:2px;transition:border-color .15s ease;}
+  .card .links a:hover{border-color:var(--yellow);}
+  .card .links a .arw{transition:transform .15s ease;display:inline-block;}
+  .card .links a:hover .arw{transform:translateX(3px);}
+  .todo{color:var(--muted)!important;border-bottom:1px dashed var(--line-strong)!important;}
+
+  /* ---------- SKILLS ---------- */
+  .skills{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;}
+  .skillgroup .k{font-family:"Space Mono",monospace;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);margin:0 0 16px;}
+  .chips{display:flex;flex-wrap:wrap;gap:9px;}
+  .chip{border:1px solid var(--line);border-radius:999px;padding:8px 15px;font-size:.9rem;color:var(--text);}
+
+  /* ---------- CONTACT ---------- */
+  .contact .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:12px;overflow:hidden;}
+  .contact a, .contact .item{background:var(--navy-850);padding:28px 26px;display:block;transition:background .18s ease;}
+  .contact a:hover{background:var(--navy-800);}
+  .contact .k{font-family:"Space Mono",monospace;font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);margin:0 0 10px;}
+  .contact .v{font-size:1.12rem;color:var(--text);word-break:break-word;}
+  .contact a:hover .v{color:var(--yellow);}
+
+  footer{padding:40px 0 60px;}
+  footer .line{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;font-family:"Space Mono",monospace;font-size:.74rem;letter-spacing:.06em;color:var(--muted);text-transform:uppercase;}
+
+  /* ---------- REVEAL ---------- */
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease;}
+  .reveal.in{opacity:1;transform:none;}
+
+  @media (max-width:820px){
+    .creds{grid-template-columns:1fr;}
+    .projects{grid-template-columns:1fr;}
+    .skills{grid-template-columns:1fr;}
+    .contact .grid{grid-template-columns:1fr;}
+    .hero{padding:90px 0 70px;}
+  }
+  @media (prefers-reduced-motion:reduce){
+    *{scroll-behavior:auto!important;}
+    .reveal{opacity:1;transform:none;transition:none;}
+    .btn,.card{transition:none;}
+  }
+</style>
+</head>
+<body>
+
+  <!-- ================= HERO ================= -->
+  <header class="hero">
+    <!-- Campo da gioco: motivo di sfondo (linee gesso) -->
+    <svg class="pitch" viewBox="0 0 680 440" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <g stroke="#EAF0FB" stroke-width="2">
+        <rect x="20" y="20" width="640" height="400" />
+        <line x1="340" y1="20" x2="340" y2="420" />
+        <circle cx="340" cy="220" r="70" />
+        <circle cx="340" cy="220" r="3" fill="#EAF0FB" stroke="none" />
+        <rect x="20" y="120" width="110" height="200" />
+        <rect x="20" y="170" width="45" height="100" />
+        <rect x="550" y="120" width="110" height="200" />
+        <rect x="615" y="170" width="45" height="100" />
+      </g>
+    </svg>
+    <div class="wrap">
+      <p class="eyebrow">Match &amp; Data Analyst</p>
+      <h1 class="name"><span>Romeo</span><span class="last">Frisoli</span></h1>
+      <p class="tagline">Trasformo partite e dati in <b>insight operativi</b> per lo staff tecnico: analisi video, report sugli avversari e strumenti di scouting.</p>
+
+      <div class="meta-row">
+        <span>Serie D · Camaiore Calcio</span>
+        <span>Statistica · 104/110</span>
+        <span>SICS · FIGC Match Analyst</span>
+      </div>
+
+      <div class="cta-row">
+        <!-- MODIFICA QUI: indirizzo email -->
+        <a class="btn btn-primary" href="mailto:rommel.frix@gmail.com">Scrivimi <span class="arw">→</span></a>
+        <!-- MODIFICA QUI: link al CV (carica il PDF nel repo e metti il nome file) -->
+        <a class="btn btn-ghost" href="#" target="_blank" rel="noopener">Scarica il CV <span class="arw">↓</span></a>
+        <!-- MODIFICA QUI: profilo LinkedIn -->
+        <a class="btn btn-ghost" href="https://www.linkedin.com/in/romeofrisoli-74b0432a4" target="_blank" rel="noopener">LinkedIn <span class="arw">→</span></a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= CHI SONO ================= -->
+  <section class="section" id="chi-sono">
+    <div class="wrap reveal">
+      <p class="eyebrow">Chi sono</p>
+      <h2>Dai dati alle decisioni</h2>
+      <p class="lead">
+        Sono un match &amp; data analyst con una formazione in Statistica all'Università di Firenze e i percorsi SICS e FIGC alle spalle.
+        Attualmente lavoro al <span class="hl">Camaiore Calcio</span> in Serie D, dove curo l'analisi video e statistica delle gare,
+        i report settimanali sugli avversari e le analisi dei singoli giocatori.
+        Il mio approccio parte sempre dallo stesso principio: i dati contano solo quando diventano un supporto fondamentale alle decisioni, ma non sono la base di queste decisioni.
+        Per questo costruisco report chiari, video tattici e strumenti solo dopo avere un'idea chiara di dove voglio arrivare con questi dati, sia sul campo che fuori.
+      </p>
+    </div>
+  </section>
+
+  <!-- ================= CREDENZIALI ================= -->
+  <section class="section" id="formazione">
+    <div class="wrap reveal">
+      <p class="eyebrow">Formazione &amp; certificazioni</p>
+      <div class="creds">
+        <div class="cred">
+          <p class="k">Studi</p>
+          <ul>
+            <li>Laurea in Statistica — <b>104/110</b><br />Università degli Studi di Firenze</li>
+            <li>Periodo all'estero — Toyo University, Tokyo</li>
+          </ul>
+        </div>
+        <div class="cred">
+          <p class="k">Certificazioni</p>
+          <ul>
+            <li>FIGC — Match Analyst <b>(102/110)</b> · Ott. 2025</li>
+            <li>SICS — Football Data Analyst <b>(37/50)</b> · Mar. 2023</li>
+            <li>SICS — Football Data Scientist <b>(62/100)</b> · Lug. 2023</li>
+          </ul>
+        </div>
+        <div class="cred">
+          <p class="k">Lingue</p>
+          <ul>
+            <li>Italiano — <b>madrelingua</b></li>
+            <li>Inglese — B2</li>
+            <li>Spagnolo — B1</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= PROGETTI ================= -->
+  <section class="section" id="progetti">
+    <div class="wrap reveal">
+      <p class="eyebrow">Progetti</p>
+      <h2>Cosa ho costruito</h2>
+      <div class="projects">
+
+        <!-- Progetto 1 -->
+        <article class="card">
+          <p class="cat">Web app · Scouting</p>
+          <h3>Piattaforma di scouting</h3>
+          <p>Web app per scouting e analisi giocatori: database calcistico con pipeline dati automatizzate, pagine di analisi e comparazione, e simulazioni di sostituzione (“se perdo X, chi lo rimpiazza?”).</p>
+          <div class="tags"><span class="tag">Python</span><span class="tag">Streamlit</span><span class="tag">SQLite</span><span class="tag">GitHub Actions</span></div>
+          <div class="links">
+            <a href="https://www.transfernow.net/dl/20260612WFBCUTEj" target="_blank" rel="noopener">Video demo <span class="arw">→</span></a>
+            <a href="https://www.linkedin.com/posts/romeo-frisoli-74b0432a4_footballanalytics-datascience-python-ugcPost-7460283985760542720-Mu2t" target="_blank" rel="noopener">Post LinkedIn <span class="arw">→</span></a>
+          </div>
+        </article>
+
+        <!-- Progetto 2 -->
+        <article class="card">
+          <p class="cat">Video analysis</p>
+          <h3>Analisi video tattiche</h3>
+          <p>Analisi complete, montate e commentate per lo staff e i giocatori in preparazione alla gara.</p>
+          <div class="tags"><span class="tag">VideoMatch</span><span class="tag">Presenter</span><span class="tag">Analysis</span><span class="tag">Youcoach</span></div>
+          <div class="links">
+            <a href="https://www.transfernow.net/dl/20260611ymMUvHhR" target="_blank" rel="noopener">Guarda i video <span class="arw">→</span></a>
+          </div>
+        </article>
+
+        <!-- Progetto 3 -->
+        <article class="card">
+          <p class="cat">Reportistica</p>
+          <h3>Report avversari &amp; scouting</h3>
+          <p>Report settimanali pre-partita: punti di forza e debolezze, palle inattive, giocatori chiave e tendenze, con dati e immagini a supporto delle scelte tecniche.</p>
+          <div class="tags"><span class="tag">Report</span><span class="tag">Data viz</span><span class="tag">Tableau</span></div>
+          <!-- Nessun link per ora: aggiungi qui un report di esempio se vuoi -->
+        </article>
+
+        <!-- Progetto 4 -->
+        <article class="card">
+          <p class="cat">Data storytelling</p>
+          <h3>Mondiali 2026 — underdog &amp; gioielli nascosti</h3>
+          <p>Analisi data-driven delle nazionali sorpresa e dei giovani talenti del torneo: profili, dati e letture tattiche raccontati in chiave visiva. In più, una web app per costruire il proprio pronostico e salvarlo in PDF.</p>
+          <div class="tags"><span class="tag">Analisi</span><span class="tag">Data viz</span><span class="tag">Scouting</span></div>
+          <div class="links">
+            <a href="WC2026_Underdog_R_Frisoli.pdf" target="_blank" rel="noopener">Apri la presentazione <span class="arw">→</span></a>
+            <a href="https://prediction-wc2026.streamlit.app/" target="_blank" rel="noopener">Prova la web app <span class="arw">→</span></a>
+          </div>
+        </article>
+
+        <!-- Progetto 5 -->
+        <article class="card">
+          <p class="cat">Tesi ed elaborati</p>
+          <h3>Tesi ed elaborati</h3>
+          <p>I lavori finali e gli elaborati prodotti durante il mio percorso di formazione: tesi di laurea ed elaborati di fine corso (SICS e FIGC), tra analisi tattica, statistica e approccio data-driven.</p>
+          <div class="tags"><span class="tag">Tesi</span><span class="tag">Ricerca</span><span class="tag">Data analysis</span></div>
+          <div class="links">
+            <!-- MODIFICA QUI: link alla cartella/PDF dove pubblichi tesi ed elaborati -->
+            <a class="todo" href="#">Aggiungi link agli elaborati <span class="arw">→</span></a>
+          </div>
+        </article>
+
+        <!-- Per aggiungere un progetto: copia un blocco <article class="card"> ... </article> -->
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= COMPETENZE ================= -->
+  <section class="section" id="competenze">
+    <div class="wrap reveal">
+      <p class="eyebrow">Competenze</p>
+      <h2>Strumenti del mestiere</h2>
+      <div class="skills">
+        <div class="skillgroup">
+          <p class="k">Dati &amp; codice</p>
+          <div class="chips"><span class="chip">Python</span><span class="chip">R</span><span class="chip">SQL</span><span class="chip">Excel</span></div>
+        </div>
+        <div class="skillgroup">
+          <p class="k">Video &amp; report</p>
+          <div class="chips"><span class="chip">VideoMatch</span><span class="chip">Youcoach</span><span class="chip">Presenter</span><span class="chip">Tableau</span><span class="chip">Canva</span></div>
+        </div>
+        <div class="skillgroup">
+          <p class="k">Aree</p>
+          <div class="chips"><span class="chip">Match analysis</span><span class="chip">Analisi avversari</span><span class="chip">Scouting</span><span class="chip">Data viz</span><span class="chip">Modelli predittivi</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CONTATTI ================= -->
+  <section class="section contact" id="contatti">
+    <div class="wrap reveal">
+      <p class="eyebrow">Contatti</p>
+      <h2>Parliamo di calcio</h2>
+      <div class="grid">
+        <!-- MODIFICA QUI: email -->
+        <a href="mailto:rommel.frix@gmail.com"><p class="k">Email</p><p class="v">rommel.frix@gmail.com</p></a>
+        <!-- MODIFICA QUI: telefono -->
+        <a href="tel:+393935962232"><p class="k">Telefono</p><p class="v">+39 393 5962232</p></a>
+        <!-- MODIFICA QUI: LinkedIn -->
+        <a href="https://www.linkedin.com/in/romeofrisoli-74b0432a4" target="_blank" rel="noopener"><p class="k">LinkedIn</p><p class="v">/in/romeofrisoli</p></a>
+        <!-- MODIFICA QUI: link al CV -->
+        <a href="#" target="_blank" rel="noopener"><p class="k">CV</p><p class="v">Scarica il PDF ↓</p></a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <div class="line">
+        <span>© 2026 Romeo Alessandro Frisoli</span>
+        <span>Match &amp; Data Analyst · Italia</span>
+      </div>
+    </div>
+  </footer>
+
+<script>
+  // Reveal progressivo delle sezioni (rispetta prefers-reduced-motion)
+  (function(){
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var els = document.querySelectorAll('.reveal');
+    if(reduce || !('IntersectionObserver' in window)){
+      els.forEach(function(el){el.classList.add('in');});
+      return;
+    }
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    },{threshold:0.12});
+    els.forEach(function(el){io.observe(el);});
+  })();
+</script>
+</body>
+</html>
