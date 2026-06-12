@@ -131,13 +131,16 @@
   .lead .hl{color:var(--yellow);font-weight:600;}
 
   /* ---------- CREDENTIALS ---------- */
-  .creds{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:12px;overflow:hidden;}
-  .cred{background:var(--navy-850);padding:26px 24px;}
-  .cred .k{font-family:"Space Mono",monospace;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);margin:0 0 14px;}
+  .creds{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+  .cred{background:var(--navy-850);border:1px solid var(--line);border-radius:16px;padding:38px 34px;display:flex;flex-direction:column;justify-content:center;}
+  .cred .k{font-family:"Space Mono",monospace;font-size:.82rem;letter-spacing:.16em;text-transform:uppercase;color:var(--blue);margin:0 0 26px;}
   .cred ul{margin:0;padding:0;list-style:none;}
-  .cred li{padding:7px 0;border-top:1px solid var(--line);color:var(--text);font-size:.97rem;}
+  .cred li{padding:18px 0;border-top:1px solid var(--line);}
   .cred li:first-child{border-top:0;padding-top:0;}
-  .cred li b{color:var(--yellow);font-weight:600;}
+  .cred li:last-child{padding-bottom:0;}
+  .cred li .t{display:block;font-size:1.2rem;font-weight:600;color:var(--text);line-height:1.3;}
+  .cred li .m{display:block;margin-top:8px;font-family:"Space Mono",monospace;font-size:.84rem;letter-spacing:.03em;color:var(--muted);line-height:1.4;}
+  .cred li .m b{color:var(--yellow);font-weight:700;}
 
   /* ---------- PROJECTS ---------- */
   .projects{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;}
@@ -229,9 +232,9 @@
         <!-- MODIFICA QUI: indirizzo email -->
         <a class="btn btn-primary" href="mailto:rommel.frix@gmail.com">Scrivimi <span class="arw">→</span></a>
         <!-- MODIFICA QUI: link al CV (carica il PDF nel repo e metti il nome file) -->
-        <a class="btn btn-ghost" href="#" target="_blank" rel="noopener">Scarica il CV <span class="arw">↓</span></a>
+        <a class="btn btn-ghost" href="CV_Romeo_Frisoli.pdf" download="CV_Romeo_Frisoli.pdf">Scarica il CV <span class="arw">↓</span></a>
         <!-- MODIFICA QUI: profilo LinkedIn -->
-        <a class="btn btn-ghost" href="https://www.linkedin.com/in/romeofrisoli-74b0432a4" target="_blank" rel="noopener">LinkedIn <span class="arw">→</span></a>
+        <a class="btn btn-ghost" href="https://www.linkedin.com/in/romeo-frisoli-74b0432a4/" target="_blank" rel="noopener">LinkedIn <span class="arw">→</span></a>
       </div>
     </div>
   </header>
@@ -255,28 +258,29 @@
   <section class="section" id="formazione">
     <div class="wrap reveal">
       <p class="eyebrow">Formazione &amp; certificazioni</p>
+      <h2>Il percorso</h2>
       <div class="creds">
         <div class="cred">
           <p class="k">Studi</p>
           <ul>
-            <li>Laurea in Statistica — <b>104/110</b><br />Università degli Studi di Firenze</li>
-            <li>Periodo all'estero — Toyo University, Tokyo</li>
+            <li><span class="t">Laurea in Statistica</span><span class="m"><b>104/110</b> · Università di Firenze</span></li>
+            <li><span class="t">Periodo all'estero</span><span class="m">Toyo University, Tokyo · 2023</span></li>
           </ul>
         </div>
         <div class="cred">
           <p class="k">Certificazioni</p>
           <ul>
-            <li>FIGC — Match Analyst <b>(102/110)</b> · Ott. 2025</li>
-            <li>SICS — Football Data Analyst <b>(37/50)</b> · Mar. 2023</li>
-            <li>SICS — Football Data Scientist <b>(62/100)</b> · Lug. 2023</li>
+            <li><span class="t">FIGC — Match Analyst</span><span class="m"><b>102/110</b> · Ott. 2025</span></li>
+            <li><span class="t">SICS — Football Data Analyst</span><span class="m"><b>37/50</b> · Mar. 2023</span></li>
+            <li><span class="t">SICS — Football Data Scientist</span><span class="m"><b>62/100</b> · Lug. 2023</span></li>
           </ul>
         </div>
         <div class="cred">
           <p class="k">Lingue</p>
           <ul>
-            <li>Italiano — <b>madrelingua</b></li>
-            <li>Inglese — B2</li>
-            <li>Spagnolo — B1</li>
+            <li><span class="t">Italiano</span><span class="m">Madrelingua</span></li>
+            <li><span class="t">Inglese</span><span class="m">B2</span></li>
+            <li><span class="t">Spagnolo</span><span class="m">B1</span></li>
           </ul>
         </div>
       </div>
@@ -297,7 +301,7 @@
           <p>Web app per scouting e analisi giocatori: database calcistico con pipeline dati automatizzate, pagine di analisi e comparazione, e simulazioni di sostituzione (“se perdo X, chi lo rimpiazza?”).</p>
           <div class="tags"><span class="tag">Python</span><span class="tag">Streamlit</span><span class="tag">SQLite</span><span class="tag">GitHub Actions</span></div>
           <div class="links">
-            <a href="https://www.transfernow.net/dl/20260612WFBCUTEj" target="_blank" rel="noopener">Video demo <span class="arw">→</span></a>
+            <a href="https://youtu.be/KZ_7PhEfBGc" target="_blank" rel="noopener">Video demo <span class="arw">→</span></a>
             <a href="https://www.linkedin.com/posts/romeo-frisoli-74b0432a4_footballanalytics-datascience-python-ugcPost-7460283985760542720-Mu2t" target="_blank" rel="noopener">Post LinkedIn <span class="arw">→</span></a>
           </div>
         </article>
@@ -309,7 +313,8 @@
           <p>Analisi complete, montate e commentate per lo staff e i giocatori in preparazione alla gara.</p>
           <div class="tags"><span class="tag">VideoMatch</span><span class="tag">Presenter</span><span class="tag">Analysis</span><span class="tag">Youcoach</span></div>
           <div class="links">
-            <a href="https://www.transfernow.net/dl/20260611ymMUvHhR" target="_blank" rel="noopener">Guarda i video <span class="arw">→</span></a>
+            <a href="https://www.transfernow.net/dl/20260611ymMUvHhR" target="_blank" rel="noopener">Guarda il video del Napoli <span class="arw">→</span></a>
+            <a href="RELAZIONE%20NAPOLI%202025-26%20FIGC%20FRISOLI.pdf" target="_blank" rel="noopener">Leggi la relazione · Napoli <span class="arw">→</span></a>
           </div>
         </article>
 
@@ -318,8 +323,10 @@
           <p class="cat">Reportistica</p>
           <h3>Report avversari &amp; scouting</h3>
           <p>Report settimanali pre-partita: punti di forza e debolezze, palle inattive, giocatori chiave e tendenze, con dati e immagini a supporto delle scelte tecniche.</p>
-          <div class="tags"><span class="tag">Report</span><span class="tag">Data viz</span><span class="tag">Tableau</span></div>
-          <!-- Nessun link per ora: aggiungi qui un report di esempio se vuoi -->
+          <div class="tags"><span class="tag">Report</span><span class="tag">xG &amp; pass network</span><span class="tag">Heatmap</span></div>
+          <div class="links">
+            <a href="RELAZIONE%20NAPOLI%202025-26%20FIGC%20FRISOLI.pdf" target="_blank" rel="noopener">Relazione avversario · Napoli <span class="arw">→</span></a>
+          </div>
         </article>
 
         <!-- Progetto 4 -->
@@ -329,7 +336,7 @@
           <p>Analisi data-driven delle nazionali sorpresa e dei giovani talenti del torneo: profili, dati e letture tattiche raccontati in chiave visiva. In più, una web app per costruire il proprio pronostico e salvarlo in PDF.</p>
           <div class="tags"><span class="tag">Analisi</span><span class="tag">Data viz</span><span class="tag">Scouting</span></div>
           <div class="links">
-            <a href="WC2026_Underdog_R_Frisoli.pdf" target="_blank" rel="noopener">Apri la presentazione <span class="arw">→</span></a>
+            <a href="Prediction%20Analisi%20Mondiale2026%20-%20R.Frisoli.pdf" target="_blank" rel="noopener">Apri la presentazione <span class="arw">→</span></a>
             <a href="https://prediction-wc2026.streamlit.app/" target="_blank" rel="noopener">Prova la web app <span class="arw">→</span></a>
           </div>
         </article>
@@ -338,11 +345,13 @@
         <article class="card">
           <p class="cat">Tesi ed elaborati</p>
           <h3>Tesi ed elaborati</h3>
-          <p>I lavori finali e gli elaborati prodotti durante il mio percorso di formazione: tesi di laurea ed elaborati di fine corso (SICS e FIGC), tra analisi tattica, statistica e approccio data-driven.</p>
-          <div class="tags"><span class="tag">Tesi</span><span class="tag">Ricerca</span><span class="tag">Data analysis</span></div>
+          <p>Tesine ed elaborati prodotti nel mio percorso di formazione, tra analisi tattica di squadra, previsioni e proposte di mercato data-driven.</p>
+          <div class="tags"><span class="tag">Tesi</span><span class="tag">Analisi tattica</span><span class="tag">Scouting</span></div>
           <div class="links">
-            <!-- MODIFICA QUI: link alla cartella/PDF dove pubblichi tesi ed elaborati -->
-            <a class="todo" href="#">Aggiungi link agli elaborati <span class="arw">→</span></a>
+            <a href="Frisoli%20Romeo%20A.%20-%20Il%20Dodicesimo%20Uomo%20-%20Tesina%20M.A.%202025%20Coverciano.pdf" target="_blank" rel="noopener">Il Dodicesimo Uomo · Tesina FIGC <span class="arw">→</span></a>
+            <a href="Pisa-da-Inzaghi-a-Gilardino--Analisi%20Frisoli.pdf" target="_blank" rel="noopener">Pisa: da Inzaghi a Gilardino <span class="arw">→</span></a>
+            <a href="Previsione%20tecnico-tattica-italia2024-Spalletti%20--Frisoli.pdf" target="_blank" rel="noopener">Italia 2024 · previsione tattica <span class="arw">→</span></a>
+            <a href="Proposte%20di%20rinforzo%20NottinghamForest%20-%20RomeoFrisoli.pdf" target="_blank" rel="noopener">Nottingham Forest · proposte di rinforzo <span class="arw">→</span></a>
           </div>
         </article>
 
@@ -385,9 +394,9 @@
         <!-- MODIFICA QUI: telefono -->
         <a href="tel:+393935962232"><p class="k">Telefono</p><p class="v">+39 393 5962232</p></a>
         <!-- MODIFICA QUI: LinkedIn -->
-        <a href="https://www.linkedin.com/in/romeofrisoli-74b0432a4" target="_blank" rel="noopener"><p class="k">LinkedIn</p><p class="v">/in/romeofrisoli</p></a>
+        <a href="https://www.linkedin.com/in/romeo-frisoli-74b0432a4/" target="_blank" rel="noopener"><p class="k">LinkedIn</p><p class="v">/in/romeo-frisoli</p></a>
         <!-- MODIFICA QUI: link al CV -->
-        <a href="#" target="_blank" rel="noopener"><p class="k">CV</p><p class="v">Scarica il PDF ↓</p></a>
+        <a href="CV_Romeo_Frisoli.pdf" download="CV_Romeo_Frisoli.pdf"><p class="k">CV</p><p class="v">Scarica il PDF ↓</p></a>
       </div>
     </div>
   </section>
